@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bitobg4jpmovd"]
+
+[ext_resource type="PackedScene" uid="uid://mf5uaqcpj31k" path="res://levels/scorpion/scorpion_map.tscn" id="1_yqpig"]
+[ext_resource type="PackedScene" uid="uid://b0nawlijshrm0" path="res://prefab/boss/scorpion (old)/scorpion_boss.tscn" id="2_alqpt"]
+[ext_resource type="PackedScene" uid="uid://cwgjmyy8qpp4u" path="res://prefab/player/samurai (old)/samurai_player.tscn" id="3_nfeh7"]
+
+[node name="Scorpion Stage" type="Node2D" unique_id=1697484627]
+
+[node name="Scorpion Map" parent="." unique_id=785823683 instance=ExtResource("1_yqpig")]
+
+[node name="Scorpion" parent="." unique_id=2042395888 node_paths=PackedStringArray("player") instance=ExtResource("2_alqpt")]
+position = Vector2(328, 178)
+player = NodePath("../Samurai")
+
+[node name="Samurai" parent="." unique_id=1786134391 node_paths=PackedStringArray("enemy") instance=ExtResource("3_nfeh7")]
+position = Vector2(-169, 118)
+enemy = NodePath("../Scorpion")
+health = 200
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=675376441]
+zoom = Vector2(0.7, 0.7)

@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://crscp4kp10yx"]
+
+[ext_resource type="Script" uid="uid://dvd0ppt06og0r" path="res://user_interface/main_menu/main_menu.gd" id="1_jfien"]
+[ext_resource type="Texture2D" uid="uid://dg3b3wseu5g25" path="res://user_interface/main_menu/sprite/main_menu_1.png" id="2_0bfng"]
+[ext_resource type="Texture2D" uid="uid://ja44d6qc61dk" path="res://user_interface/main_menu/sprite/main_menu_2.png" id="3_h8c6n"]
+[ext_resource type="PackedScene" uid="uid://dervb53jms5l1" path="res://user_interface/fade_transition/fade_transition.tscn" id="3_yb5uv"]
+[ext_resource type="Texture2D" uid="uid://dkg6da6nnpnff" path="res://user_interface/main_menu/sprite/main_menu_3.png" id="4_ytedg"]
+
+[node name="MainMenu" type="Node2D" unique_id=768745258]
+script = ExtResource("1_jfien")
+
+[node name="first" type="Sprite2D" parent="." unique_id=1272475179]
+visible = false
+texture = ExtResource("2_0bfng")
+
+[node name="second" type="Sprite2D" parent="." unique_id=704541838]
+visible = false
+texture = ExtResource("3_h8c6n")
+
+[node name="third" type="Sprite2D" parent="." unique_id=1728856363]
+texture = ExtResource("4_ytedg")
+
+[node name="Button_Manager" type="Control" parent="." unique_id=194297992]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button" type="Button" parent="Button_Manager" unique_id=126438151]
+layout_mode = 0
+offset_left = -747.0
+offset_top = -298.0
+offset_right = -449.0
+offset_bottom = -267.0
+text = "Play"
+
+[node name="Button2" type="Button" parent="Button_Manager" unique_id=567902453]
+layout_mode = 0
+offset_left = -749.0
+offset_top = 431.0
+offset_right = -450.0
+offset_bottom = 462.0
+text = "Quit"
+
+[node name="fade_transition" parent="." unique_id=1274756041 instance=ExtResource("3_yb5uv")]
+visible = false
+
+[node name="first_timer" type="Timer" parent="fade_transition" unique_id=625581616]
+wait_time = 3.0
+one_shot = true
+
+[node name="second_timer" type="Timer" parent="fade_transition" unique_id=1614585015]
+wait_time = 4.0
+one_shot = true
+
+[node name="third_timer" type="Timer" parent="fade_transition" unique_id=1370801616]
+wait_time = 7.0
+one_shot = true
+
+[node name="fourth_timer" type="Timer" parent="fade_transition" unique_id=152871795]
+wait_time = 8.0
+one_shot = true
+
+[node name="fifth_timer" type="Timer" parent="fade_transition" unique_id=981023740]
+wait_time = 9.0
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=375177360]
+zoom = Vector2(0.6, 0.6)
+
+[connection signal="pressed" from="Button_Manager/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button_Manager/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="timeout" from="fade_transition/first_timer" to="." method="_on_first_timer_timeout"]
+[connection signal="timeout" from="fade_transition/second_timer" to="." method="_on_second_timer_timeout"]
+[connection signal="timeout" from="fade_transition/third_timer" to="." method="_on_third_timer_timeout"]
+[connection signal="timeout" from="fade_transition/fourth_timer" to="." method="_on_fourth_timer_timeout"]
+[connection signal="timeout" from="fade_transition/fifth_timer" to="." method="_on_fifth_timer_timeout"]

@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://mf5uaqcpj31k"]
+
+[ext_resource type="Texture2D" uid="uid://h77qxs486iv4" path="res://levels/scorpion/sprite/scorpion_background.png" id="1_awlb6"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_gw0la"]
+distance = -330.5
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_klti0"]
+normal = Vector2(-0.99999714, 0.0023923377)
+distance = -207.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yqpig"]
+normal = Vector2(0.9999274, 0.012047318)
+distance = -180.0
+
+[node name="Scorpion Stage" type="Node2D" unique_id=785823683]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1740575657]
+texture = ExtResource("1_awlb6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1638623351]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1088046045]
+position = Vector2(-2.5, -71.5)
+shape = SubResource("WorldBoundaryShape2D_gw0la")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=810013217]
+position = Vector2(611, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=983832431]
+shape = SubResource("WorldBoundaryShape2D_klti0")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=132180439]
+position = Vector2(-628, 3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1240238293]
+shape = SubResource("WorldBoundaryShape2D_yqpig")
