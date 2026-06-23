@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://nogw3dxuwflt"]
 
 [ext_resource type="Texture2D" uid="uid://dwm47nmmxdr0j" path="res://prefab/boss/phoenix/sprite/phoenix_rwing.png" id="1_eotv6"]
+[ext_resource type="Script" uid="uid://denqprsynvbxt" path="res://prefab/boss/phoenix/phoenix_boss.gd" id="1_mu2tm"]
 [ext_resource type="Texture2D" uid="uid://bjjfkl6npiyx6" path="res://prefab/boss/phoenix/sprite/phoenix_rleg.png" id="2_8ylvx"]
 [ext_resource type="Texture2D" uid="uid://ctbljeoq26hab" path="res://prefab/boss/phoenix/sprite/phoenix_tail.png" id="3_qhaus"]
 [ext_resource type="Texture2D" uid="uid://22a7wrp0sa3w" path="res://prefab/boss/phoenix/sprite/phoenix_body.png" id="4_1ym6n"]
@@ -454,6 +455,7 @@ _data = {
 }
 
 [node name="boss_phoenix" type="Node2D" unique_id=385925062]
+script = ExtResource("1_mu2tm")
 
 [node name="sprites" type="Node2D" parent="." unique_id=465113493]
 

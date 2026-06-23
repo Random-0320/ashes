@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://nogw3dxuwflt" path="res://prefab/boss/phoenix/phoenix_boss.tscn" id="1_p502x"]
 [ext_resource type="PackedScene" uid="uid://j4unyrw4t00c" path="res://levels/phoenix/phoenix_map.tscn" id="1_pcwwg"]
+[ext_resource type="PackedScene" uid="uid://cwgjmyy8qpp4u" path="res://prefab/player/samurai (old)/samurai_player.tscn" id="3_3pwkb"]
 
 [node name="phoenix_level" type="Node2D" unique_id=1907377455]
 
@@ -10,6 +11,9 @@
 [node name="boss_phoenix" parent="." unique_id=385925062 instance=ExtResource("1_p502x")]
 position = Vector2(531, 193)
 scale = Vector2(0.295, 0.295)
+
+[node name="Samurai" parent="." unique_id=1786134391 instance=ExtResource("3_3pwkb")]
+position = Vector2(-304, 313)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=779737105]
 zoom = Vector2(0.695, 0.695)

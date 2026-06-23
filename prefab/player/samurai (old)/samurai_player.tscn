@@ -249,7 +249,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ewpuf")
 }],
-"loop": false,
+"loop": 0,
 "name": &"attack_1",
 "speed": 17.0
 }, {
@@ -266,7 +266,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dl7ok")
 }],
-"loop": false,
+"loop": 0,
 "name": &"attack_2",
 "speed": 17.0
 }, {
@@ -280,7 +280,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g6en0")
 }],
-"loop": false,
+"loop": 0,
 "name": &"attack_3",
 "speed": 15.0
 }, {
@@ -294,7 +294,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s7mhw")
 }],
-"loop": false,
+"loop": 0,
 "name": &"dead",
 "speed": 5.0
 }, {
@@ -305,7 +305,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_amdbc")
 }],
-"loop": false,
+"loop": 0,
 "name": &"hurt",
 "speed": 5.0
 }, {
@@ -328,7 +328,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w4p6u")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -369,7 +369,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tcbpu")
 }],
-"loop": false,
+"loop": 0,
 "name": &"jump",
 "speed": 8.0
 }, {
@@ -398,7 +398,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4lkrf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run",
 "speed": 19.0
 }, {
@@ -409,7 +409,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jj3ak")
 }],
-"loop": false,
+"loop": 0,
 "name": &"shield",
 "speed": 4.0
 }, {
@@ -438,24 +438,25 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gjpi3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"walk",
 "speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_18fwa"]
-size = Vector2(18, 70)
+size = Vector2(48, 156)
 
 [node name="Samurai" type="CharacterBody2D" unique_id=1786134391]
 script = ExtResource("1_dujo8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1604092624]
-position = Vector2(0, -64)
+position = Vector2(59, -133.5)
+scale = Vector2(1.921875, 2.0859375)
 sprite_frames = SubResource("SpriteFrames_geait")
 animation = &"idle"
 autoplay = "idle"
 frame_progress = 0.9111485
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2101570125]
-position = Vector2(0, -35)
+position = Vector2(62, -79)
 shape = SubResource("RectangleShape2D_18fwa")
