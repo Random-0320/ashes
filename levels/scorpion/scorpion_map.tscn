@@ -13,25 +13,25 @@ distance = -207.0
 normal = Vector2(0.9999274, 0.012047318)
 distance = -180.0
 
-[node name="Scorpion Stage" type="Node2D" unique_id=785823683]
+[node name="scorpion_map" type="Node2D" unique_id=785823683]
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1740575657]
+[node name="scorpion_background" type="Sprite2D" parent="." unique_id=1740575657]
 texture = ExtResource("1_awlb6")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1638623351]
+[node name="static_body_down" type="StaticBody2D" parent="." unique_id=1638623351]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1088046045]
+[node name="floor" type="CollisionShape2D" parent="static_body_down" unique_id=1088046045]
 position = Vector2(-2.5, -71.5)
 shape = SubResource("WorldBoundaryShape2D_gw0la")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=810013217]
+[node name="static_body_right" type="StaticBody2D" parent="." unique_id=810013217]
 position = Vector2(611, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=983832431]
+[node name="right_wall" type="CollisionShape2D" parent="static_body_right" unique_id=983832431]
 shape = SubResource("WorldBoundaryShape2D_klti0")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=132180439]
+[node name="static_body_left" type="StaticBody2D" parent="." unique_id=132180439]
 position = Vector2(-628, 3)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1240238293]
+[node name="left_wall" type="CollisionShape2D" parent="static_body_left" unique_id=1240238293]
 shape = SubResource("WorldBoundaryShape2D_yqpig")
