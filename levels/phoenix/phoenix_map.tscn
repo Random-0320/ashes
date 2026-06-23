@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://j4unyrw4t00c"]
+
+[ext_resource type="Texture2D" uid="uid://cabgwtxaj5up1" path="res://levels/phoenix/sprite/phoenix_background.png" id="1_rnho3"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_tw3kj"]
+distance = -330.5
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_kbprk"]
+normal = Vector2(-0.99999714, 0.0023923377)
+distance = -207.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_u6ots"]
+normal = Vector2(0.9999274, 0.012047318)
+distance = -180.0
+
+[node name="phoenix_map" type="Node2D" unique_id=1750273972]
+
+[node name="phoenix_backgroud" type="Sprite2D" parent="." unique_id=307078491]
+texture = ExtResource("1_rnho3")
+
+[node name="static_body_down" type="StaticBody2D" parent="." unique_id=1272125085]
+
+[node name="floor" type="CollisionShape2D" parent="static_body_down" unique_id=162151193]
+position = Vector2(0, 16)
+shape = SubResource("WorldBoundaryShape2D_tw3kj")
+
+[node name="static_body_right" type="StaticBody2D" parent="." unique_id=1782144628]
+position = Vector2(611, 0)
+
+[node name="right_wall" type="CollisionShape2D" parent="static_body_right" unique_id=1386837101]
+shape = SubResource("WorldBoundaryShape2D_kbprk")
+
+[node name="static_body_left" type="StaticBody2D" parent="." unique_id=2117892832]
+position = Vector2(-628, 3)
+
+[node name="left_wall" type="CollisionShape2D" parent="static_body_left" unique_id=663038402]
+shape = SubResource("WorldBoundaryShape2D_u6ots")
