@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://3136yvns0brw"]
+
+[ext_resource type="Texture2D" uid="uid://wbmeyrifkueo" path="res://prefab/attack/wyvern/sprite/wyvern_attack.png" id="1_xdq3k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qkvwq"]
+radius = 246.07317
+
+[node name="wyvern_attack" type="Node2D" unique_id=88223439]
+
+[node name="wyvern_attack" type="Sprite2D" parent="." unique_id=16801229]
+rotation = 0.7975557
+texture = ExtResource("1_xdq3k")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=581134278]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1751950505]
+position = Vector2(-165, -3)
+shape = SubResource("CircleShape2D_qkvwq")

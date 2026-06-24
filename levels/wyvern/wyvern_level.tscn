@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c2t6t6qaeiupg" path="res://levels/wyvern/wyvern_map.tscn" id="1_4cvyt"]
 [ext_resource type="PackedScene" uid="uid://07dl7uuqnfui" path="res://prefab/boss/wyvern/wyvern_boss.tscn" id="2_gybdq"]
+[ext_resource type="PackedScene" uid="uid://dga5aauxg10lp" path="res://prefab/player/fighter (old)/fighter_player.tscn" id="3_gybdq"]
 
 [node name="wyvern_level" type="Node2D" unique_id=908952735]
 
@@ -13,3 +14,7 @@ scale = Vector2(0.32769465, 0.32055837)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1469474285]
 zoom = Vector2(0.695, 0.695)
+
+[node name="Fighter" parent="." unique_id=1786134391 instance=ExtResource("3_gybdq")]
+position = Vector2(-426, 179)
+scale = Vector2(2.2712097, 2.5191903)

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Ashes"
-run/main_scene="uid://crscp4kp10yx"
+run/main_scene="uid://due40p8htd0i7"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
