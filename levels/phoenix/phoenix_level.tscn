@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://nogw3dxuwflt" path="res://prefab/boss/phoenix/phoenix_boss.tscn" id="1_p502x"]
 [ext_resource type="PackedScene" uid="uid://j4unyrw4t00c" path="res://levels/phoenix/phoenix_map.tscn" id="1_pcwwg"]
 [ext_resource type="PackedScene" uid="uid://cwgjmyy8qpp4u" path="res://prefab/player/samurai (old)/samurai_player.tscn" id="3_3pwkb"]
+[ext_resource type="PackedScene" uid="uid://djk1tgg2phhcy" path="res://prefab/attacks/fireball.tscn" id="4_yqi6t"]
 
 [node name="phoenix_level" type="Node2D" unique_id=1907377455]
 
@@ -17,3 +18,6 @@ position = Vector2(-304, 313)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=779737105]
 zoom = Vector2(0.695, 0.695)
+
+[node name="Fireball" parent="." unique_id=42498919 instance=ExtResource("4_yqi6t")]
+position = Vector2(553, 733)

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://djk1tgg2phhcy"]
+
+[ext_resource type="Texture2D" uid="uid://bwd508k0knp4v" path="res://prefab/attacks/sprites/fireball.png" id="1_q2vh3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_44saq"]
+radius = 252.03
+
+[node name="Fireball" type="Node2D" unique_id=42498919]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=850487847]
+texture = ExtResource("1_q2vh3")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1434141944]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=444794175]
+position = Vector2(9, 35)
+shape = SubResource("CircleShape2D_44saq")
