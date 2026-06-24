@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bruishw1teq3c"
-path="res://.godot/imported/phoenix_lleg.png-78b9a40ebad4629114798b24b029ca90.ctex"
+uid="uid://rljp4arpqfor"
+path="res://.godot/imported/wyvern_head.png-8b231351eed72c1def2c4391379268c0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://prefab/boss/phoenix/sprite/phoenix_lleg.png"
-dest_files=["res://.godot/imported/phoenix_lleg.png-78b9a40ebad4629114798b24b029ca90.ctex"]
+source_file="res://prefab/boss/wyvern/sprite/wyvern_head.png"
+dest_files=["res://.godot/imported/wyvern_head.png-8b231351eed72c1def2c4391379268c0.ctex"]
 
 [params]
 

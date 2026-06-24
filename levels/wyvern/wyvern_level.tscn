@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://due40p8htd0i7"]
+
+[ext_resource type="PackedScene" uid="uid://c2t6t6qaeiupg" path="res://levels/wyvern/wyvern_map.tscn" id="1_4cvyt"]
+[ext_resource type="PackedScene" uid="uid://07dl7uuqnfui" path="res://prefab/boss/wyvern/wyvern_boss.tscn" id="2_gybdq"]
+
+[node name="wyvern_level" type="Node2D" unique_id=908952735]
+
+[node name="wyvern_map" parent="." unique_id=492116375 instance=ExtResource("1_4cvyt")]
+
+[node name="wyvern_boss" parent="." unique_id=1352794999 instance=ExtResource("2_gybdq")]
+position = Vector2(471.00003, 57)
+scale = Vector2(0.32769465, 0.32055837)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1469474285]
+zoom = Vector2(0.695, 0.695)
