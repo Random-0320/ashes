@@ -21,7 +21,7 @@ texture = ExtResource("1_imj71")
 [node name="static_body_down" type="StaticBody2D" parent="." unique_id=1056621701]
 
 [node name="floor" type="CollisionShape2D" parent="static_body_down" unique_id=1102428459]
-position = Vector2(0, 16)
+position = Vector2(27, -72)
 shape = SubResource("WorldBoundaryShape2D_e1xv8")
 
 [node name="static_body_right" type="StaticBody2D" parent="." unique_id=427201754]
