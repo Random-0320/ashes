@@ -1,3 +1,37 @@
 [gd_scene format=3 uid="uid://c2t6t6qaeiupg"]
 
+[ext_resource type="Texture2D" uid="uid://ddob5ctdyejs4" path="res://levels/wyvern/sprite/wyvern_background.png" id="1_imj71"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_e1xv8"]
+distance = -330.5
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_1weiv"]
+normal = Vector2(-0.99999714, 0.0023923377)
+distance = -207.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_negyh"]
+normal = Vector2(0.9999274, 0.012047318)
+distance = -180.0
+
 [node name="wyvern_map" type="Node2D" unique_id=492116375]
+
+[node name="wyvern_background" type="Sprite2D" parent="." unique_id=712795044]
+texture = ExtResource("1_imj71")
+
+[node name="static_body_down" type="StaticBody2D" parent="." unique_id=1056621701]
+
+[node name="floor" type="CollisionShape2D" parent="static_body_down" unique_id=1102428459]
+position = Vector2(0, 16)
+shape = SubResource("WorldBoundaryShape2D_e1xv8")
+
+[node name="static_body_right" type="StaticBody2D" parent="." unique_id=427201754]
+position = Vector2(611, 0)
+
+[node name="right_wall" type="CollisionShape2D" parent="static_body_right" unique_id=1226244152]
+shape = SubResource("WorldBoundaryShape2D_1weiv")
+
+[node name="static_body_left" type="StaticBody2D" parent="." unique_id=1267958962]
+position = Vector2(-628, 3)
+
+[node name="left_wall" type="CollisionShape2D" parent="static_body_left" unique_id=920237356]
+shape = SubResource("WorldBoundaryShape2D_negyh")
