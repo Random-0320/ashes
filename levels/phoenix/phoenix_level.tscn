@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cg34vckxbo0vp"]
 
-[ext_resource type="PackedScene" uid="uid://nogw3dxuwflt" path="res://prefab/boss/phoenix/phoenix_boss.tscn" id="1_p502x"]
+[ext_resource type="PackedScene" uid="uid://do7dwkcq3cvoa" path="res://prefab/boss/phoenix/phoenix_boss.tscn" id="1_p502x"]
 [ext_resource type="PackedScene" uid="uid://j4unyrw4t00c" path="res://levels/phoenix/phoenix_map.tscn" id="1_pcwwg"]
 [ext_resource type="PackedScene" uid="uid://cwgjmyy8qpp4u" path="res://prefab/player/samurai (old)/samurai_player.tscn" id="3_3pwkb"]
 [ext_resource type="PackedScene" uid="uid://djk1tgg2phhcy" path="res://prefab/attacks/fireball.tscn" id="4_yqi6t"]
@@ -10,8 +10,8 @@
 [node name="phoenix_map" parent="." unique_id=1750273972 instance=ExtResource("1_pcwwg")]
 
 [node name="boss_phoenix" parent="." unique_id=385925062 instance=ExtResource("1_p502x")]
-position = Vector2(531, 193)
-scale = Vector2(0.295, 0.295)
+position = Vector2(459, 163)
+scale = Vector2(0.44465524, 0.43219003)
 
 [node name="Samurai" parent="." unique_id=1786134391 instance=ExtResource("3_3pwkb")]
 position = Vector2(-304, 313)
