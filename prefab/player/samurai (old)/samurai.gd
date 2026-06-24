@@ -22,7 +22,7 @@ const ATTACK_HIT = [0.12, 0.15, 0.18]
 
 @onready var sprite = $AnimatedSprite2D
 
-@export var health = 1000
+@export var health = 100
 var jumps = MAX_JUMPS
 
 var combo = 0
@@ -391,7 +391,7 @@ func die():
 	sprite.play(
 		"dead"
 	)
-
+	get_tree().change_scene_to_file("res://levels/scorpion/scorpion_level.tscn")
 	await sprite.animation_finished
 
 	queue_free()

@@ -249,7 +249,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ewpuf")
 }],
-"loop": 0,
+"loop": false,
 "name": &"attack_1",
 "speed": 17.0
 }, {
@@ -266,7 +266,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dl7ok")
 }],
-"loop": 0,
+"loop": false,
 "name": &"attack_2",
 "speed": 17.0
 }, {
@@ -280,7 +280,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_g6en0")
 }],
-"loop": 0,
+"loop": false,
 "name": &"attack_3",
 "speed": 15.0
 }, {
@@ -294,7 +294,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_s7mhw")
 }],
-"loop": 0,
+"loop": false,
 "name": &"dead",
 "speed": 5.0
 }, {
@@ -305,7 +305,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_amdbc")
 }],
-"loop": 0,
+"loop": false,
 "name": &"hurt",
 "speed": 5.0
 }, {
@@ -328,7 +328,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_w4p6u")
 }],
-"loop": 1,
+"loop": true,
 "name": &"idle",
 "speed": 5.0
 }, {
@@ -369,7 +369,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_tcbpu")
 }],
-"loop": 0,
+"loop": false,
 "name": &"jump",
 "speed": 8.0
 }, {
@@ -398,7 +398,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4lkrf")
 }],
-"loop": 1,
+"loop": true,
 "name": &"run",
 "speed": 19.0
 }, {
@@ -409,7 +409,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jj3ak")
 }],
-"loop": 0,
+"loop": false,
 "name": &"shield",
 "speed": 4.0
 }, {
@@ -438,7 +438,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gjpi3")
 }],
-"loop": 1,
+"loop": true,
 "name": &"walk",
 "speed": 10.0
 }]
@@ -447,6 +447,7 @@ animations = [{
 size = Vector2(18, 70)
 
 [node name="Samurai" type="CharacterBody2D" unique_id=1786134391]
+scale = Vector2(2.166691, 2.2267604)
 script = ExtResource("1_dujo8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1604092624]

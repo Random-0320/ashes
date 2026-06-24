@@ -2,22 +2,15 @@ extends CharacterBody2D
 
 # Adicione uma variável de vida no topo do script do Boss se já não tiver, ex:
 @export var speed := 150.0
-@export var left_limit := -2400.0
-@export var right_limit := 300.0
+@export var left_limit := -1800.0
+@export var right_limit := 150.0
 @export var max_health := 250
 @onready var health := max_health
 
-# Arraste o nó da barra de vida para cá no Inspector, ou use o caminho direto:
-@onready var health_bar = get_node("/root/BossUI/BossHealthBar") # <-- AJUSTE O CAMINHO CONFORME O NOME DA SUA CENA!
-func _ready():
-	if health_bar:
-		health_bar.max_value = max_health
-		health_bar.value = health
-		health_bar.show() # Garante que a barra apareça
-# ADICIONE essa linha lá em cima no script do Boss, junto com as outras variáveis exportadas:
+# Arraste o nó da barra de vida para cá no Inspector, ou use o cam
 @export var launch_angle_degrees := 30.0 # Altere esse valor no Inspector para mudar a inclinação!
 
-@export var fireball_scene: PackedScene
+@export var wyvernball_scene: PackedScene
 @export var attack_cooldown := 1.5
 
 var direction := 1
@@ -25,7 +18,7 @@ var can_attack := true
 var is_attacking := false
 
 @onready var anim = $animations/AnimationPlayer
-@onready var fireball_spawn = $FireballSpawn
+@onready var wyvernball_spawn = $WyvernballSpawn
 
 
 func _physics_process(delta):
@@ -70,10 +63,10 @@ func _attack():
 
 	anim.play("attack_1")
 
-	var fireball = fireball_scene.instantiate()
+	var wyvernball = wyvernball_scene.instantiate()
 	
 	# 1. Define a posição inicial no Spawn
-	fireball.global_position = fireball_spawn.global_position
+	wyvernball.global_position = wyvernball_spawn.global_position
 	
 	# 2. Converte o ângulo do Inspector para Radianos
 	var angulo_rad = deg_to_rad(launch_angle_degrees)
@@ -92,13 +85,13 @@ func _attack():
 
 	# 4. Passa o vetor para a bola de fogo
 # Substitua a linha do erro por esta (ela tenta definir no nó pai e, se não achar, define na Area2D)
-	if "velocity_vector" in fireball:
-		fireball.velocity_vector = direcao_final
-	elif fireball.has_node("Area2D") and "velocity_vector" in fireball.get_node("Area2D"):
-		fireball.get_node("Area2D").velocity_vector = direcao_final
+	if "velocity_vector" in wyvernball:
+		wyvernball.velocity_vector = direcao_final
+	elif wyvernball.has_node("Area2D") and "velocity_vector" in wyvernball.get_node("Area2D"):
+		wyvernball.get_node("Area2D").velocity_vector = direcao_final
 
 # 5. Adiciona na cena do jogo
-	get_tree().current_scene.add_child(fireball)
+	get_tree().current_scene.add_child(wyvernball)
 
 	#ESPERA A ANIMAÇÃO DE ATAQUE ACABAR ANTES DE VOLTAR PRO IDLE
 	if anim.has_animation("attack_1"):
@@ -114,17 +107,9 @@ func _attack():
 func take_damage(amount: int):
 	health -= amount
 	print("HP do Boss: ", health)
-	
-	# 🔴 ATUALIZA A BARRA DE VIDA NA TELA!
-	if health_bar:
-		health_bar.value = health
-		
-	# Se o boss morrer, esconde a barra e remove o Boss
 	if health <= 0:
 		print("Boss derrotado!")
-		get_tree().change_scene_to_file("res://user_interface/main_menu/main_menu.tscn")
-		if health_bar:
-			health_bar.hide() # Some com a barra de vida da tela
+		get_tree().change_scene_to_file("res://levels/phoenix/phoenix_level.tscn")
 		queue_free() 
 		return
 		

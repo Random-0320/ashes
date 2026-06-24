@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://ctbljeoq26hab" path="res://prefab/boss/phoenix/sprite/phoenix_tail.png" id="3_qhaus"]
 [ext_resource type="Texture2D" uid="uid://22a7wrp0sa3w" path="res://prefab/boss/phoenix/sprite/phoenix_body.png" id="4_1ym6n"]
 [ext_resource type="Texture2D" uid="uid://66e7mj07sccl" path="res://prefab/boss/phoenix/sprite/phoenix_head.png" id="5_hcky4"]
-[ext_resource type="Texture2D" uid="uid://bwgb4eo7xtbcq" path="res://prefab/boss/phoenix/sprite/phoenix_lleg.png" id="6_csgih"]
+[ext_resource type="Texture2D" uid="uid://bruishw1teq3c" path="res://prefab/boss/phoenix/sprite/phoenix_lleg.png" id="6_csgih"]
 [ext_resource type="Texture2D" uid="uid://d3wn0b51tgi1w" path="res://prefab/boss/phoenix/sprite/phoenix_lwing.png" id="7_dmyw1"]
 [ext_resource type="Texture2D" uid="uid://crg24286kd5r0" path="res://prefab/boss/phoenix/sprite/phoenix_chin.png" id="8_xkkj8"]
 
@@ -455,14 +455,13 @@ _data = {
 &"idle": SubResource("Animation_8ylvx")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_44saq"]
-size = Vector2(200, 200)
+[sub_resource type="CircleShape2D" id="CircleShape2D_bk2b2"]
+radius = 68.41142
 
 [node name="boss_phoenix" type="Node2D" unique_id=385925062]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=937757970]
 script = ExtResource("1_mu2tm")
-health = 250
 speed = 250.0
 fireball_scene = ExtResource("2_bk2b2")
 
@@ -582,14 +581,14 @@ offset = Vector2(560, 394)
 
 [node name="l_leg" type="Sprite2D" parent="CharacterBody2D/sprites" unique_id=727378735]
 position = Vector2(149, -323)
-rotation = 0.30378535
+rotation = 0.30378538
 scale = Vector2(0.9999999, 0.9999999)
 texture = ExtResource("6_csgih")
 offset = Vector2(-195, -153)
 
 [node name="l_wing" type="Sprite2D" parent="CharacterBody2D/sprites" unique_id=2121372913]
 position = Vector2(123, -557)
-rotation = -0.31172043
+rotation = -0.31172046
 texture = ExtResource("7_dmyw1")
 offset = Vector2(-323, 316)
 
@@ -601,8 +600,9 @@ texture = ExtResource("8_xkkj8")
 offset = Vector2(602, 444)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1989402418]
-visible = false
-shape = SubResource("RectangleShape2D_44saq")
+position = Vector2(-4.999999, -462.99994)
+scale = Vector2(3.924852, 9.217635)
+shape = SubResource("CircleShape2D_bk2b2")
 
 [node name="FireballSpawn" type="Node2D" parent="CharacterBody2D" unique_id=697096746]
 position = Vector2(-84, -747)

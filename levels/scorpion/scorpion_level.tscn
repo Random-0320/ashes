@@ -15,7 +15,7 @@ player = NodePath("../samurai")
 [node name="samurai" parent="." unique_id=1786134391 node_paths=PackedStringArray("enemy") instance=ExtResource("3_nfeh7")]
 position = Vector2(-169, 118)
 enemy = NodePath("../scorpion")
-health = 200
+health = 250
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=675376441]
 zoom = Vector2(0.7, 0.7)

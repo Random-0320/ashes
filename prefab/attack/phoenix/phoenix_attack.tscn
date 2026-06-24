@@ -4,17 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://hqiw5ov0v3we" path="res://prefab/attack/phoenix/sprite/phoenix_attack.png" id="1_yinqb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0nqt2"]
-radius = 81.00617
+radius = 44.28318
 
 [node name="Area2D" type="Area2D" unique_id=1046366863]
 script = ExtResource("1_0nqt2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=338522906]
-position = Vector2(67, -4)
-shape = SubResource("CircleShape2D_0nqt2")
-
 [node name="phoenix_attack" type="Sprite2D" parent="." unique_id=945019750]
 position = Vector2(1.9999876, -0.99993896)
 rotation = -2.3561945
-scale = Vector2(0.3321633, 0.33521843)
+scale = Vector2(0.212, 0.214)
 texture = ExtResource("1_yinqb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=338522906]
+position = Vector2(40, -1)
+shape = SubResource("CircleShape2D_0nqt2")

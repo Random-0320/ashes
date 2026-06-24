@@ -277,9 +277,8 @@ func take_damage(dmg):
 
 
 	if hp <= 0:
-
+		get_tree().change_scene_to_file("res://levels/wyvern/wyvern_level.tscn")
 		die()
-
 		return
 
 
@@ -316,6 +315,7 @@ func die():
 		return
 
 
+	
 	is_dead = true
 
 	is_hurt = false
@@ -352,3 +352,4 @@ func _on_animation_finished():
 			is_hurt = false
 
 			sprite.play("idle")
+			

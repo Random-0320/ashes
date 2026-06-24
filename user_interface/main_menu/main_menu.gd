@@ -34,7 +34,7 @@ func _on_fifth_timer_timeout():
 	$fade_transition.hide()
 	
 func _on_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Scorpion_Stage.tscn")
+	get_tree().change_scene_to_file("res://levels/scorpion/scorpion_level.tscn")
 
 func _on_button_2_pressed() -> void:
 	pass # Replace with function body.

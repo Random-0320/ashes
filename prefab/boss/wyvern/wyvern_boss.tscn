@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://07dl7uuqnfui"]
 
 [ext_resource type="Texture2D" uid="uid://crm5wrtv1fq1f" path="res://prefab/boss/wyvern/sprite/wyvern_rwing.png" id="1_ao6w4"]
+[ext_resource type="Script" uid="uid://buocnps3pbpk" path="res://prefab/boss/wyvern/wyvern.gd" id="1_lacvm"]
 [ext_resource type="Texture2D" uid="uid://dutwmkhra173j" path="res://prefab/boss/wyvern/sprite/wyvern_rleg.png" id="2_lacvm"]
+[ext_resource type="PackedScene" uid="uid://3136yvns0brw" path="res://prefab/attack/wyvern/wyvern_attack.tscn" id="2_xssr4"]
 [ext_resource type="Texture2D" uid="uid://bydlr4qd4pa6p" path="res://prefab/boss/wyvern/sprite/wyvern_body.png" id="3_xssr4"]
 [ext_resource type="Texture2D" uid="uid://dinjwfqt3hb5o" path="res://prefab/boss/wyvern/sprite/wyvern_tail.png" id="4_lwlr6"]
 [ext_resource type="Texture2D" uid="uid://c13pa1cqu1wc2" path="res://prefab/boss/wyvern/sprite/wyvern_chin.png" id="5_b2se0"]
@@ -453,130 +455,150 @@ _data = {
 &"idle": SubResource("Animation_8ylvx")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ao6w4"]
+radius = 53.44777
+
 [node name="wyvern_boss" type="Node2D" unique_id=1352794999]
 
-[node name="sprites" type="Node2D" parent="." unique_id=2017018488]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=582020756]
+script = ExtResource("1_lacvm")
+wyvernball_scene = ExtResource("2_xssr4")
 
-[node name="r_wing" type="Sprite2D" parent="sprites" unique_id=1296107813]
+[node name="sprites" type="Node2D" parent="CharacterBody2D" unique_id=2017018488]
+
+[node name="r_wing" type="Sprite2D" parent="CharacterBody2D/sprites" unique_id=1296107813]
 position = Vector2(-67.37636, -374.58652)
 rotation = 0.3238698
 scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("1_ao6w4")
 offset = Vector2(-18, 384)
 
-[node name="r_leg" type="Sprite2D" parent="sprites" unique_id=469079822]
+[node name="r_leg" type="Sprite2D" parent="CharacterBody2D/sprites" unique_id=469079822]
 position = Vector2(-17.723143, -259.62323)
 rotation = 0.3186099
+scale = Vector2(0.99999994, 0.99999994)
 texture = ExtResource("2_lacvm")
 offset = Vector2(320, -283)
 
-[node name="body" type="Sprite2D" parent="sprites" unique_id=834522123]
+[node name="body" type="Sprite2D" parent="CharacterBody2D/sprites" unique_id=834522123]
 position = Vector2(9, -326)
 texture = ExtResource("3_xssr4")
 offset = Vector2(-71, 11)
 
-[node name="tail" type="Sprite2D" parent="sprites" unique_id=2050724334]
+[node name="tail" type="Sprite2D" parent="CharacterBody2D/sprites" unique_id=2050724334]
 position = Vector2(388, -304)
 rotation = -0.20855008
 texture = ExtResource("4_lwlr6")
 offset = Vector2(-320, -289)
 
-[node name="chin" type="Sprite2D" parent="sprites" unique_id=94418466]
-position = Vector2(-620.027, -452.51376)
+[node name="chin" type="Sprite2D" parent="CharacterBody2D/sprites" unique_id=94418466]
+position = Vector2(-620.02686, -452.5137)
 rotation = 0.11015991
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(0.9999996, 0.9999996)
 texture = ExtResource("5_b2se0")
 offset = Vector2(755, 76)
 
-[node name="head" type="Sprite2D" parent="sprites" unique_id=1639562198]
+[node name="head" type="Sprite2D" parent="CharacterBody2D/sprites" unique_id=1639562198]
 position = Vector2(-378.89462, -331.2694)
 rotation = 0.11015991
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(0.9999996, 0.9999996)
 texture = ExtResource("6_cs13t")
 offset = Vector2(502, -19)
 
-[node name="l_leg" type="Sprite2D" parent="sprites" unique_id=779579369]
+[node name="l_leg" type="Sprite2D" parent="CharacterBody2D/sprites" unique_id=779579369]
 position = Vector2(124, -285)
 rotation = 0.30378535
 texture = ExtResource("7_nq232")
 offset = Vector2(-163, -285)
 
-[node name="l_wing" type="Sprite2D" parent="sprites" unique_id=1867401118]
+[node name="l_wing" type="Sprite2D" parent="CharacterBody2D/sprites" unique_id=1867401118]
 position = Vector2(-67.9798, -364.70544)
 rotation = -0.31172043
 texture = ExtResource("8_615kk")
 offset = Vector2(-203, 396)
 
-[node name="bones" type="Node2D" parent="." unique_id=1177183692]
+[node name="bones" type="Node2D" parent="CharacterBody2D" unique_id=1177183692]
 
-[node name="skeleton" type="Skeleton2D" parent="bones" unique_id=2098577161]
+[node name="skeleton" type="Skeleton2D" parent="CharacterBody2D/bones" unique_id=2098577161]
 
-[node name="body" type="Bone2D" parent="bones/skeleton" unique_id=1549411892]
+[node name="body" type="Bone2D" parent="CharacterBody2D/bones/skeleton" unique_id=1549411892]
 position = Vector2(9, -326)
 rest = Transform2D(0.748894, 0.6626898, -0.6626898, 0.748894, 71, -11)
 
-[node name="rem_trans_body" type="RemoteTransform2D" parent="bones/skeleton/body" unique_id=1154322083]
+[node name="rem_trans_body" type="RemoteTransform2D" parent="CharacterBody2D/bones/skeleton/body" unique_id=1154322083]
 remote_path = NodePath("../../../../sprites/body")
 
-[node name="r_leg" type="Bone2D" parent="bones/skeleton/body" unique_id=836619435]
+[node name="r_leg" type="Bone2D" parent="CharacterBody2D/bones/skeleton/body" unique_id=836619435]
 position = Vector2(-26.723143, 66.376755)
 rotation = 0.3186099
+scale = Vector2(0.99999994, 0.99999994)
 rest = Transform2D(0.79790586, -0.6027821, 0.6027821, 0.79790586, -26.723143, 66.376755)
 
-[node name="rem_trans_r_leg" type="RemoteTransform2D" parent="bones/skeleton/body/r_leg" unique_id=588620828]
+[node name="rem_trans_r_leg" type="RemoteTransform2D" parent="CharacterBody2D/bones/skeleton/body/r_leg" unique_id=588620828]
 remote_path = NodePath("../../../../../sprites/r_leg")
 
-[node name="l_leg" type="Bone2D" parent="bones/skeleton/body" unique_id=89598068]
+[node name="l_leg" type="Bone2D" parent="CharacterBody2D/bones/skeleton/body" unique_id=89598068]
 position = Vector2(115, 41)
 rotation = 0.30378532
 rest = Transform2D(0.7825319, -0.6226105, 0.6226105, 0.7825319, 115, 41)
 
-[node name="rem_trans_l_leg" type="RemoteTransform2D" parent="bones/skeleton/body/l_leg" unique_id=221765841]
+[node name="rem_trans_l_leg" type="RemoteTransform2D" parent="CharacterBody2D/bones/skeleton/body/l_leg" unique_id=221765841]
 remote_path = NodePath("../../../../../sprites/l_leg")
 
-[node name="tail" type="Bone2D" parent="bones/skeleton/body" unique_id=64359217]
+[node name="tail" type="Bone2D" parent="CharacterBody2D/bones/skeleton/body" unique_id=64359217]
 position = Vector2(379, 22)
 rotation = -0.20855008
 rest = Transform2D(1, 0, 0, 1, 379, 22)
 
-[node name="rem_trans_tail" type="RemoteTransform2D" parent="bones/skeleton/body/tail" unique_id=1436760519]
+[node name="rem_trans_tail" type="RemoteTransform2D" parent="CharacterBody2D/bones/skeleton/body/tail" unique_id=1436760519]
 remote_path = NodePath("../../../../../sprites/tail")
 
-[node name="head" type="Bone2D" parent="bones/skeleton/body" unique_id=1610014755]
+[node name="head" type="Bone2D" parent="CharacterBody2D/bones/skeleton/body" unique_id=1610014755]
 position = Vector2(-387.89462, -5.269394)
 rotation = 0.11015991
-scale = Vector2(0.99999994, 0.99999994)
+scale = Vector2(0.9999996, 0.9999996)
 rest = Transform2D(0.7444182, -0.66771364, 0.66771364, 0.7444182, -387.89462, -5.269394)
 
-[node name="rem_trans_head" type="RemoteTransform2D" parent="bones/skeleton/body/head" unique_id=1200870743]
+[node name="rem_trans_head" type="RemoteTransform2D" parent="CharacterBody2D/bones/skeleton/body/head" unique_id=1200870743]
 remote_path = NodePath("../../../../../sprites/head")
 
-[node name="chin" type="Bone2D" parent="bones/skeleton/body/head" unique_id=663689229]
+[node name="chin" type="Bone2D" parent="CharacterBody2D/bones/skeleton/body/head" unique_id=663689229]
 position = Vector2(-253, -94)
 rest = Transform2D(1, 0, 0, 1, -253, -94)
 
-[node name="rem_trans_chin" type="RemoteTransform2D" parent="bones/skeleton/body/head/chin" unique_id=288938012]
+[node name="rem_trans_chin" type="RemoteTransform2D" parent="CharacterBody2D/bones/skeleton/body/head/chin" unique_id=288938012]
 remote_path = NodePath("../../../../../../sprites/chin")
 
-[node name="r_wing" type="Bone2D" parent="bones/skeleton/body" unique_id=815525426]
+[node name="r_wing" type="Bone2D" parent="CharacterBody2D/bones/skeleton/body" unique_id=815525426]
 position = Vector2(-76.37636, -48.58653)
 rotation = 0.3238698
 scale = Vector2(0.99999994, 0.99999994)
 rest = Transform2D(1, 0, 0, 1, -76.37636, -48.58653)
 
-[node name="rem_trans_r_wing" type="RemoteTransform2D" parent="bones/skeleton/body/r_wing" unique_id=901299802]
+[node name="rem_trans_r_wing" type="RemoteTransform2D" parent="CharacterBody2D/bones/skeleton/body/r_wing" unique_id=901299802]
 remote_path = NodePath("../../../../../sprites/r_wing")
 
-[node name="l_wing" type="Bone2D" parent="bones/skeleton/body" unique_id=1228271084]
+[node name="l_wing" type="Bone2D" parent="CharacterBody2D/bones/skeleton/body" unique_id=1228271084]
 position = Vector2(-76.9798, -38.705444)
 rotation = -0.3117204
 rest = Transform2D(1, 0, 0, 1, -76.9798, -38.705444)
 
-[node name="rem_trans_l_wing" type="RemoteTransform2D" parent="bones/skeleton/body/l_wing" unique_id=64956988]
+[node name="rem_trans_l_wing" type="RemoteTransform2D" parent="CharacterBody2D/bones/skeleton/body/l_wing" unique_id=64956988]
 remote_path = NodePath("../../../../../sprites/l_wing")
 
-[node name="animations" type="Node2D" parent="." unique_id=1733453741]
+[node name="animations" type="Node2D" parent="CharacterBody2D" unique_id=1733453741]
 
-[node name="animation_player" type="AnimationPlayer" parent="animations" unique_id=713367634]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody2D/animations" unique_id=713367634]
 libraries/ = SubResource("AnimationLibrary_ao6w4")
 autoplay = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=131581564]
+position = Vector2(-191, -414)
+rotation = -1.3564563
+scale = Vector2(3.924852, 9.217635)
+shape = SubResource("CircleShape2D_ao6w4")
+
+[node name="WyvernballSpawn" type="Node2D" parent="CharacterBody2D" unique_id=1072377601]
+position = Vector2(-661, -470.0001)
+rotation = -0.7853982
+scale = Vector2(100, 100)

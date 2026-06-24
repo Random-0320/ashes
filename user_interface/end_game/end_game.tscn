@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dcx001k1klbvu"]
+
+[ext_resource type="Texture2D" uid="uid://dg3b3wseu5g25" path="res://user_interface/main_menu/sprite (old)/main_menu_1.png" id="1_8e3ey"]
+
+[node name="end_game" type="Node2D" unique_id=1596023445]
+
+[node name="first" type="Sprite2D" parent="." unique_id=697765388]
+texture = ExtResource("1_8e3ey")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1092920965]
+zoom = Vector2(0.6, 0.6)
