@@ -270,11 +270,9 @@ func take_damage(amount = 10):
 	if damage_timer > 0:
 		return
 
-
 	# tomar dano quebra combo
 	combo = 0
 	combo_timer = 0
-
 
 	if is_shielding and enemy:
 
@@ -295,42 +293,47 @@ func take_damage(amount = 10):
 		if frontal:
 			return
 
-
 	damage_timer = DAMAGE_COOLDOWN
 
 	health -= amount
-	print("Hp Samurai:",health)
-
+	print("Hp Samurai:", health)
 
 	if health <= 0:
-
 		die()
-
 		return
-
 
 	is_hurt = true
 
+	# 🛡️ CORREÇÃO DO CRASH: Só calcula knockback se o inimigo existir de verdade!
+	if enemy != null:
+		var knock = sign(
+			global_position.x
+			-
+			enemy.global_position.x
+		)
 
-	var knock = sign(
-		global_position.x
-		-
-		enemy.global_position.x
-	)
-
-	velocity.x = (
-		knock
-		*
-		KNOCKBACK
-	)
+		velocity.x = (
+			knock
+			*
+			KNOCKBACK
+		)
+	else:
+		# Se não houver inimigo definido, empurra baseado para onde o Samurai está olhando
+		var knock = 1 if sprite.flip_h else -1
+		velocity.x = knock * KNOCKBACK
 
 	velocity.y = KNOCKBACK_UP
-
 
 	sprite.play(
 		"hurt"
 	)
 
+	await get_tree().create_timer(
+		0.15
+	).timeout
+
+	if !is_dead:
+		is_hurt = false
 
 	await get_tree().create_timer(
 		0.15
@@ -392,3 +395,29 @@ func die():
 	await sprite.animation_finished
 
 	queue_free()
+
+
+# ⚔️ NOVA FUNÇÃO: GERENCIA A COLISÃO COM A BOLA DE FOGO
+func handle_fireball_collision(fireball):
+	if is_dead:
+		return
+		
+	# Verifica se o jogador está defendendo de fato
+	if is_shielding:
+		# Descobre se a bola de fogo veio pela frente do Samurai
+		var dx = fireball.global_position.x - global_position.x
+		var frontal = (dx > 0 and !sprite.flip_h) or (dx < 0 and sprite.flip_h)
+		
+		if frontal:
+			print("--- BOLA DE FOGO REFLETIDA! ---")
+			# 1. Inverte completamente o vetor de movimento da bola de fogo
+			fireball.velocity_vector = -fireball.velocity_vector
+			
+			# 2. Atualiza a rotação e visual da bola de fogo para o novo sentido
+			if fireball.has_method("update_direction_visual"):
+				fireball.update_direction_visual()
+			return # Sai da função sem tomar dano!
+
+	# Se não estava defendendo ou foi pelas costas, toma dano normal da bola
+	take_damage(25) # Defina a quantidade de dano que a bola causa aqui
+	fireball.queue_free() # Destrói a bola de fogo após atingir o corpo do player
