@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bruishw1teq3c"
-path="res://.godot/imported/phoenix_lleg.png-78b9a40ebad4629114798b24b029ca90.ctex"
+uid="uid://2082felgy0uf"
+path="res://.godot/imported/wyvern_lwing.png-ec01064aa824b8a738227f99812d08a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://prefab/boss/phoenix/sprite/phoenix_lleg.png"
-dest_files=["res://.godot/imported/phoenix_lleg.png-78b9a40ebad4629114798b24b029ca90.ctex"]
+source_file="res://prefab/boss/wyvern/sprite/wyvern_lwing.png"
+dest_files=["res://.godot/imported/wyvern_lwing.png-ec01064aa824b8a738227f99812d08a4.ctex"]
 
 [params]
 
